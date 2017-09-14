@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateContentTable extends Migration
+class Lists extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,9 @@ class CreateContentTable extends Migration
      */
     public function up()
     {
-        //创建内容表
-        Schema::create('sort_content', function(Blueprint $table)
-            {
-                $table->increments('id');
-            }
-        );
+        Schema::table('article_id', function (Blueprint $table) {
+            //
+        });
     }
 
     /**
@@ -27,6 +24,8 @@ class CreateContentTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('article_id', function (Blueprint $table) {
+            //
+        });
     }
 }

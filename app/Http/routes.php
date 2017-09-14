@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('newsort/{author}', 'NewSortController@create');
+
+Route::post('Submit', 'SubmitController@store');
