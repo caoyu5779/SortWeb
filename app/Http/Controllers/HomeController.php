@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Sort;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Page;
 
 class HomeController extends Controller
 {

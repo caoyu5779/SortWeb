@@ -18,19 +18,24 @@ class SubmitController extends Controller
         $this->validate($request, [
             'title' => 'required|max:255',
             'body' => 'required',
+            'description' => 'required|max:255',
         ]);
 
-        $sort = new Sort();
-        $lastArticleId = $sort::getLastInsertPage($author);
+        $lastArticleId = Sort::getLastInsertPage($author);
 
-        $result = $sort::createNewPage(
+        $sortResult = Sort::createNewPage(
             $request->title,
             $author,
-            $request->body,
-            $lastArticleId['article_id']
+            $request->description,
+            $lastArticleId['article_id'] + 1
         );
 
-        if (!empty($result))
+        $articleResult = Sort::createNewArticle(
+            $author,
+            $request->body
+        );
+
+        if (!empty($sortResult) && !empty($articleResult))
         {
             return redirect('home');
         }

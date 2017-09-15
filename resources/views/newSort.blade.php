@@ -18,6 +18,8 @@
                             {!! csrf_field() !!}
                             <input type="text" name="title" class="form-control" required="required" placeholder="请输入标题">
                             <br>
+                            <input type="text" name="description" class="form-control" required="required" placeholder="请输入简介">
+                            <br>
                             <textarea name="body" rows="10" class="form-control" required="required" placeholder="请输入内容"></textarea>
                             <br>
                             <button class="btn btn-info btn-lg">新增排序</button>

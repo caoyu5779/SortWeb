@@ -22,3 +22,5 @@ Route::get('/home', 'HomeController@index');
 Route::get('newsort/{author}', 'NewSortController@create');
 
 Route::post('Submit', 'SubmitController@store');
+
+Route::get('article/{article_id}', 'ArticleController@show');
